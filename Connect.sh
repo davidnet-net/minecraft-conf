@@ -1,2 +1,3 @@
 #!/bin/bash
-docker exec -it sigmasmp-mc-1 bash
+CONTAINER_NAME=$(<"servername.txt")
+docker exec -it $CONTAINER_NAME bash

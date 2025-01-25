@@ -2,9 +2,9 @@
 #? Backup.sh
 
 # Instellingen
-CONTAINER_NAME="sigmasmp-mc-1"
+CONTAINER_NAME=$(<"servername.txt")
 BACKUP_DIR="Backups"
-REMOTE_DIR="onedrive:Backups"
+REMOTE_DIR="onedrive:Samenwerken David En Papa/davidnet/BackupsV2/Minecraft/$CONTAINER_NAME"
 TIMESTAMP=$(date +"%d-%m-%Y_%H-%M-%S")
 
 # Stap 1: Verbind met de container en stop de Minecraft-server via RCON
@@ -26,7 +26,7 @@ mkdir -p "$BACKUP_DIR/$TIMESTAMP"
 docker cp "$CONTAINER_NAME:/data" "$BACKUP_DIR/$TIMESTAMP/"
 echo "Data gekopieerd naar $BACKUP_DIR/$TIMESTAMP"
 
-# Stap 5: Synchroniseer met OneDrive
+# Stap 5: SynchroniseBackupser met OneDrive
 echo "Synchroniseren met OneDrive..."
 rclone copy "$BACKUP_DIR/$TIMESTAMP" "$REMOTE_DIR/$TIMESTAMP" --progress
 

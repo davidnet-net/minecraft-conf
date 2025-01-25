@@ -4,7 +4,7 @@
 # Instellingen
 CONTAINER_NAME="sigmasmp-mc-1"
 BACKUP_DIR="Backups"
-REMOTE_DIR="onedrive:Backups"
+REMOTE_DIR="onedrive:Samenwerken David En Papa/davidnet/BackupsV2/Minecraft/$CONTAINER_NAME"
 
 # Stap 1: Synchroniseer OneDrive-back-ups naar lokaal
 echo "Synchroniseren van OneDrive-back-ups..."
