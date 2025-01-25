@@ -54,5 +54,5 @@ cp -r "$BACKUP_DIR/$SELECTED_BACKUP/data" data
 echo "Back-up hersteld!"
 
 # Stap 5: Start de Minecraft-server opnieuw
-docker start "$CONTAINER_NAME"
+docker compose up -d
 echo "Server opnieuw gestart met de herstelde back-up!"

@@ -42,5 +42,5 @@ done
 
 # Klaar!
 echo "Backup succesvol gemaakt!"
-docker-compose up -d
+docker compose up -d
 echo "Container opnieuw gestart!"
