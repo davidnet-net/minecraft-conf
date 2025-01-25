@@ -1,0 +1,14 @@
+services:
+  mc:
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25566:25565"
+      #- "25575:25575" // rcon-cli - maar gebruik gewoon ssh om met de container te connceten en dan rcon-cli
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      MEMORY: 3G
+    volumes:
+      - ./data:/data
