@@ -2,6 +2,7 @@ services:
   mc:
     image: itzg/minecraft-server
     tty: true
+    restart: "no"
     stdin_open: true
     ports:
       - "25566:25565"
