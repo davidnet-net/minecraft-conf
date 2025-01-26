@@ -2,7 +2,7 @@
 #? LoadBackup.sh
 
 # Instellingen
-CONTAINER_NAME="sigmasmp-mc-1"
+CONTAINER_NAME=$(<"servername.txt")
 BACKUP_DIR="Backups"
 REMOTE_DIR="onedrive:Samenwerken David En Papa/davidnet/BackupsV2/Minecraft/$CONTAINER_NAME"
 
