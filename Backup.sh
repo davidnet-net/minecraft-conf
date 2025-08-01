@@ -121,7 +121,7 @@ docker exec "$CONTAINER_NAME" rcon-cli tellraw @a "$(cat <<EOF
 [
   {"text":" "},
   {"text":"-------- Backup Geyap -------","color":"gold","bold":true},
-  {"text":"\Nieuwste backup: ","color":"yellow"},
+  {"text":"\nNieuwste backup: ","color":"yellow"},
   {"text":"$NEWEST_FMT","color":"white"},
   {"text":"\nOudste backup: ","color":"yellow"},
   {"text":"$OLDEST_FMT","color":"white"},
@@ -137,6 +137,7 @@ docker exec "$CONTAINER_NAME" rcon-cli tellraw @a "$(cat <<EOF
 ]
 EOF
 )"
+
 
 # --- Cleanup temp ---
 rm -rf "$TEMP_DIR"
