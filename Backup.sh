@@ -117,7 +117,8 @@ echo "Repository grootte: $TOTAL_SIZE_FORMATTED"
 echo "Cache grootte: $CACHE_SIZE_FORMATTED"
 
 # --- Notify players with chat summary ---
-docker exec "$CONTAINER_NAME" rcon-cli tellraw @a "$(cat <<EOF
+# Bouw de JSON als één enkele string
+TELLRAW_JSON=$(cat <<EOF
 [
   {"text":" "},
   {"text":"-------- Backup Geyap -------","color":"gold","bold":true},
@@ -136,7 +137,13 @@ docker exec "$CONTAINER_NAME" rcon-cli tellraw @a "$(cat <<EOF
   {"text":" "}
 ]
 EOF
-)"
+)
+
+# Verwijder line breaks (optioneel, want JSON met \n werkt meestal niet goed)
+TELLRAW_JSON_COMPACT=$(echo "$TELLRAW_JSON" | tr -d '\n')
+
+# Stuur de tellraw
+docker exec "$CONTAINER_NAME" rcon-cli "tellraw @a $TELLRAW_JSON_COMPACT"
 
 
 # --- Cleanup temp ---
