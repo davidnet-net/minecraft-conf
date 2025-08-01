@@ -1,7 +1,6 @@
 Requires ``` rclone restic jq ```
 
-Designed with ``` restic restic 0.17.3 compiled with go1.23.4 on linux/amd64 ```  and ``` rclone v1.60.1-DEV
- ``` in mind
+Designed with ``` restic restic 0.17.3 compiled with go1.23.4 on linux/amd64 ```  and ``` rclone v1.60.1-DEV ``` in mind
 
 # Ubuntu
 
