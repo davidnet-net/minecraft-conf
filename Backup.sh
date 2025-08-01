@@ -6,7 +6,8 @@ TEMP_DIR="./cache"
 TIMESTAMP=$(date +"%d-%m-%Y_%H-%M-%S")
 VERSION="0.1.0"
 
-# Load Environment variables
+# Load Environment
+cd "$(dirname "$0")" || exit 1
 source .env
 export RESTIC_REPOSITORY
 export RESTIC_PASSWORD
